@@ -1,0 +1,23 @@
+{
+	"name": "dokploy.ts",
+	"main": "dist/index.cjs.js",
+	"module": "dist/index.esm.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsup src/index.ts --format cjs,esm --dts",
+		"generate": "openapi-generator-cli generate -i dokploy-openapi.json -g typescript-node -o ./src"
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"tsup": "^8.5.0"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	},
+	"dependencies": {
+		"@openapitools/openapi-generator-cli": "^2.21.0"
+	}
+}
